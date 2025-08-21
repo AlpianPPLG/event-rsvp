@@ -11,7 +11,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { CalendarDays, User, Settings, LogOut } from "lucide-react"
+import { CalendarDays, User, LogOut, MessageSquare } from "lucide-react"
 import Link from "next/link"
 import { ThemeToggle } from "@/components/theme-toggle"
 
@@ -38,7 +38,7 @@ export function Navbar() {
           <Link href="/events" className="text-sm font-medium hover:text-primary transition-colors">
             Events
           </Link>
-          <Link href="/rsvp" className="text-sm font-medium hover:text-primary transition-colors">
+          <Link href="/events" className="text-sm font-medium hover:text-primary transition-colors">
             RSVPs
           </Link>
           <Link href="/analytics" className="text-sm font-medium hover:text-primary transition-colors">
@@ -70,6 +70,12 @@ export function Navbar() {
                 <Link href="/profile" className="cursor-pointer">
                   <User className="mr-2 h-4 w-4" />
                   Profile
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem asChild>
+                <Link href="/feedback" className="cursor-pointer">
+                  <MessageSquare className="mr-2 h-4 w-4" />
+                  Feedback
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuSeparator />
