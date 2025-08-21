@@ -3,9 +3,18 @@ import { getRSVPByEventAndUser } from "@/lib/rsvp"
 import { getEventById } from "@/lib/events"
 import { verifyToken } from "@/lib/auth"
 
-export async function GET(request: NextRequest, { params }: { params: { eventId: string } }) {
+interface Context {
+  params: {
+    eventId: string
+  }
+}
+
+export async function GET(
+  request: NextRequest,
+  context: Context
+) {
   try {
-    const eventId = Number.parseInt(params.eventId)
+    const eventId = Number.parseInt(context.params.eventId)
 
     // Get event details (public info)
     const event = await getEventById(eventId)
