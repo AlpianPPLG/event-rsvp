@@ -3,21 +3,16 @@ import { getRSVPByEventAndUser } from "@/lib/rsvp"
 import { getEventById } from "@/lib/events"
 import { verifyToken } from "@/lib/auth"
 
-interface Context {
-  params: {
-    eventId: string
-  }
-}
-
 export async function GET(
   request: NextRequest,
-  context: Context
+  context: { params: Promise<{ eventId: string }> }
 ) {
   try {
-    const eventId = Number.parseInt(context.params.eventId)
+    const { eventId } = await context.params
+    const eventIdNum = Number.parseInt(eventId)
 
     // Get event details (public info)
-    const event = await getEventById(eventId)
+    const event = await getEventById(eventIdNum)
     if (!event) {
       return NextResponse.json({ error: "Event not found" }, { status: 404 })
     }
@@ -30,7 +25,7 @@ export async function GET(
     if (token) {
       const decoded = verifyToken(token)
       if (decoded) {
-        userRSVP = await getRSVPByEventAndUser(eventId, decoded.id)
+        userRSVP = await getRSVPByEventAndUser(eventIdNum, decoded.id)
       }
     }
 
