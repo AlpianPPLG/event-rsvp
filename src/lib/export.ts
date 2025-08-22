@@ -138,7 +138,6 @@ export async function exportToPDF(data: ExportData): Promise<void> {
   const { event, rsvps, guests } = data
 
   const pdf = new jsPDF()
-  const pageWidth = pdf.internal.pageSize.getWidth()
   const margin = 20
 
   // Title

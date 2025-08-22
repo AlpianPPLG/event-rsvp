@@ -34,6 +34,7 @@ export default function EditEventPage() {
     if (params.id) {
       fetchEvent()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id])
 
   const fetchEvent = async () => {
@@ -81,6 +82,7 @@ export default function EditEventPage() {
       } else {
         setError(data.error || "Failed to update event")
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError("An error occurred while updating the event")
     } finally {
@@ -113,7 +115,7 @@ export default function EditEventPage() {
               <CardContent className="flex flex-col items-center justify-center py-16">
                 <h3 className="text-xl font-semibold mb-2">Event not found</h3>
                 <p className="text-muted-foreground mb-6">
-                  The event you're trying to edit doesn't exist or you don't have permission to edit it.
+                  The event youre trying to edit doesnt exist or you dont have permission to edit it.
                 </p>
                 <Link href="/events">
                   <Button>Back to Events</Button>

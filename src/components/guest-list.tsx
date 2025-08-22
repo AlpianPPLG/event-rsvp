@@ -101,6 +101,7 @@ export function GuestList({ guests, onGuestUpdated, onGuestDeleted }: GuestListP
       } else {
         setError(data.error || "Failed to update guest")
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError("An error occurred while updating the guest")
     } finally {
@@ -130,7 +131,7 @@ export function GuestList({ guests, onGuestUpdated, onGuestDeleted }: GuestListP
         <div className="flex justify-between items-center">
           <div>
             <CardTitle>Guest List</CardTitle>
-            <CardDescription>Manage guests who don't have accounts</CardDescription>
+            <CardDescription>Manage guests who dont have accounts</CardDescription>
           </div>
           <div className="relative max-w-sm">
             <Search className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />

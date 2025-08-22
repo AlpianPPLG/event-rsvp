@@ -4,6 +4,7 @@ import { getUserById } from "@/lib/auth"
 
 async function handler(request: NextRequest) {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user = (request as any).user
     const fullUser = await getUserById(user.id)
 

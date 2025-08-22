@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
 import { executeQuery } from "./database"

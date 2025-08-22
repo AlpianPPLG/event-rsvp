@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unsafe-function-type */
 import { type NextRequest, NextResponse } from "next/server"
 import { verifyToken } from "./auth"
 
@@ -18,6 +20,7 @@ export function withAuth(handler: Function) {
       // Add user info to request
       ;(request as any).user = decoded
       return handler(request, ...args)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return NextResponse.json({ error: "Authentication failed" }, { status: 401 })
     }

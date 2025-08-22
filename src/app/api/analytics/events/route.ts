@@ -4,6 +4,7 @@ import { getEventAnalytics } from "@/lib/analytics"
 
 async function getHandler(request: NextRequest) {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user = (request as any).user
     const analytics = await getEventAnalytics(user.id)
 

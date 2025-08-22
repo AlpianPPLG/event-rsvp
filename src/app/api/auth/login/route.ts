@@ -14,6 +14,7 @@ export async function POST(request: NextRequest) {
     const results = (await executeQuery(
       "SELECT id, name, email, password, role, avatar_url, created_at FROM users WHERE email = ?",
       [email],
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     )) as any[]
 
     if (results.length === 0) {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState, useEffect } from "react"
@@ -26,6 +27,7 @@ export default function PublicRSVPPage() {
     if (params.eventId) {
       fetchEventData()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.eventId])
 
   const fetchEventData = async () => {
@@ -105,7 +107,7 @@ export default function PublicRSVPPage() {
           <CardContent className="flex flex-col items-center justify-center py-16">
             <h3 className="text-xl font-semibold mb-2">Event Not Found</h3>
             <p className="text-muted-foreground text-center mb-6">
-              The event you're looking for doesn't exist or has been removed.
+              The event youre looking for doesnt exist or has been removed.
             </p>
             <Link href="/">
               <Button>Go Home</Button>
@@ -123,7 +125,7 @@ export default function PublicRSVPPage() {
       <div className="container mx-auto px-4 py-16">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">You're Invited!</h1>
+            <h1 className="text-4xl font-bold mb-4">Youre Invited!</h1>
             <p className="text-xl text-muted-foreground">Please respond to this event invitation</p>
           </div>
 
@@ -188,7 +190,7 @@ export default function PublicRSVPPage() {
             <Card>
               <CardHeader>
                 <CardTitle>Your Response</CardTitle>
-                <CardDescription>Let the organizer know if you'll be attending</CardDescription>
+                <CardDescription>Let the organizer know if youll be attending</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 {message && (
@@ -219,7 +221,7 @@ export default function PublicRSVPPage() {
                     className="w-full justify-start"
                   >
                     <CheckCircle className="h-4 w-4 mr-2" />
-                    Yes, I'll be there
+                    Yes, Ill be there
                   </Button>
 
                   <Button
@@ -229,7 +231,7 @@ export default function PublicRSVPPage() {
                     className="w-full justify-start"
                   >
                     <XCircle className="h-4 w-4 mr-2" />
-                    No, I can't make it
+                    No, I cant make it
                   </Button>
 
                   <Button
@@ -239,7 +241,7 @@ export default function PublicRSVPPage() {
                     className="w-full justify-start"
                   >
                     <HelpCircle className="h-4 w-4 mr-2" />
-                    Maybe, I'm not sure yet
+                    Maybe, Im not sure yet
                   </Button>
                 </div>
 

@@ -37,6 +37,7 @@ export function RSVPQuickForm({ eventId, currentStatus, onUpdate }: RSVPQuickFor
       } else {
         setError(data.error || "Failed to update RSVP")
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError("An error occurred while updating your RSVP")
     } finally {
@@ -72,7 +73,7 @@ export function RSVPQuickForm({ eventId, currentStatus, onUpdate }: RSVPQuickFor
             className="justify-start"
           >
             <CheckCircle className="h-4 w-4 mr-2" />
-            Yes, I'll attend
+            Yes, Ill attend
           </Button>
 
           <Button
@@ -82,7 +83,7 @@ export function RSVPQuickForm({ eventId, currentStatus, onUpdate }: RSVPQuickFor
             className="justify-start"
           >
             <XCircle className="h-4 w-4 mr-2" />
-            No, I can't make it
+            No, I cant make it
           </Button>
 
           <Button

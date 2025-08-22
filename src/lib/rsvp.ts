@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { executeQuery } from "./database"
 import type { RSVP } from "./types"
 

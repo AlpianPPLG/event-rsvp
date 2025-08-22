@@ -5,6 +5,7 @@ import { getEventById } from "@/lib/events"
 
 async function getHandler(request: NextRequest, { params }: { params: { id: string } }) {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user = (request as any).user
     const eventId = Number.parseInt(params.id)
 

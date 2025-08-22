@@ -45,6 +45,7 @@ export default function CreateEventPage() {
       } else {
         setError(data.error || "Failed to create event")
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError("An error occurred while creating the event")
     } finally {

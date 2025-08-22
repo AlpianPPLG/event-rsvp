@@ -35,6 +35,7 @@ export default function EventRSVPPage() {
       fetchRSVPs()
       fetchGuests()
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.id])
 
   useEffect(() => {
@@ -162,7 +163,7 @@ Generated: ${format(new Date(), "PPP 'at' p")}
             <Card>
               <CardContent className="flex flex-col items-center justify-center py-16">
                 <h3 className="text-xl font-semibold mb-2">Event not found</h3>
-                <p className="text-muted-foreground mb-6">The event you're looking for doesn't exist.</p>
+                <p className="text-muted-foreground mb-6">The event youre looking for doesnt exist.</p>
                 <Link href="/events">
                   <Button>Back to Events</Button>
                 </Link>

@@ -5,6 +5,7 @@ import { getEventById } from "@/lib/events"
 
 async function postHandler(request: NextRequest) {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user = (request as any).user
     const { eventId, status } = await request.json()
 

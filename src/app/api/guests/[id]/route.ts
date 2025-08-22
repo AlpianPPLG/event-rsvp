@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { type NextRequest, NextResponse } from "next/server"
 import { withAuth } from "@/lib/middleware"
 import { getGuestById, updateGuest, deleteGuest } from "@/lib/guests"

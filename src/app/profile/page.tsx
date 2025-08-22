@@ -12,11 +12,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { ArrowLeft, User, Mail, Loader2 } from "lucide-react"
 import { AuthGuard } from "@/components/auth-guard"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 
 export default function ProfilePage() {
   const { user, checkAuth } = useAuth()
-  const router = useRouter()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,6 +57,7 @@ export default function ProfilePage() {
       } else {
         setError(data.error || "Failed to update profile")
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError("An error occurred while updating your profile")
     } finally {

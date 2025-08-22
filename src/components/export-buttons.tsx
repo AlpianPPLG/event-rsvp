@@ -19,7 +19,7 @@ interface ExportButtonsProps {
   eventTitle?: string
 }
 
-export function ExportButtons({ eventId, eventTitle }: ExportButtonsProps) {
+export function ExportButtons({ eventId }: ExportButtonsProps) {
   const [isExporting, setIsExporting] = useState(false)
 
   const fetchExportData = async (): Promise<ExportData | null> => {

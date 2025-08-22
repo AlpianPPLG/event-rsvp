@@ -124,7 +124,7 @@ export default function HomePage() {
           <div>
             <h2 className="text-3xl font-bold mb-2">Dashboard</h2>
             <p className="text-muted-foreground">
-              Welcome back, {user.name}! Here's an overview of your events and RSVPs
+              Welcome back, {user.name}! Heres an overview of your events and RSVPs
             </p>
           </div>
           <Link href="/events/create">

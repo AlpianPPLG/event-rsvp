@@ -48,6 +48,7 @@ export function AddGuestForm({ eventId, onGuestAdded }: AddGuestFormProps) {
       } else {
         setError(data.error || "Failed to add guest")
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError("An error occurred while adding the guest")
     } finally {

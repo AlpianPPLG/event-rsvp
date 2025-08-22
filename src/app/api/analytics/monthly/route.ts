@@ -4,6 +4,7 @@ import { getMonthlyStats } from "@/lib/analytics"
 
 async function getHandler(request: NextRequest) {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const user = (request as any).user
     const stats = await getMonthlyStats(user.id)
 

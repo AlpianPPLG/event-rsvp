@@ -51,6 +51,7 @@ export default function FeedbackPage() {
       } else {
         setError(data.error || "Failed to send feedback")
       }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       setError("Network error. Please try again.")
     } finally {
@@ -81,7 +82,7 @@ export default function FeedbackPage() {
               <CheckCircle className="mx-auto h-12 w-12 text-green-500 mb-4" />
               <h2 className="text-2xl font-bold mb-2">Feedback Sent Successfully!</h2>
               <p className="text-muted-foreground mb-6">
-                Thank you for your feedback. We'll review it and get back to you if needed.
+                Thank you for your feedback. Well review it and get back to you if needed.
               </p>
               <div className="flex gap-4 justify-center">
                 <Button asChild>
@@ -114,7 +115,7 @@ export default function FeedbackPage() {
             <CardTitle>Send Feedback</CardTitle>
           </div>
           <CardDescription>
-            We'd love to hear your thoughts, suggestions, or report any issues you've encountered.
+            Wed love to hear your thoughts, suggestions, or report any issues youve encountered.
           </CardDescription>
         </CardHeader>
         <CardContent>

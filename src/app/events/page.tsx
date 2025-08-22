@@ -14,7 +14,7 @@ import { format } from "date-fns"
 import type { Event } from "@/lib/types"
 
 export default function EventsPage() {
-  const { user } = useAuth()
+  useAuth()
   const [events, setEvents] = useState<Event[]>([])
   const [loading, setLoading] = useState(true)
   const [searchTerm, setSearchTerm] = useState("")
