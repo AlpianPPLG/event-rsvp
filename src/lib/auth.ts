@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import bcrypt from "bcryptjs"
 import jwt from "jsonwebtoken"
+import { NextRequest } from "next/server"
 import { executeQuery } from "./database"
 
 const JWT_SECRET = process.env.JWT_SECRET || "fallback-secret"
@@ -86,6 +87,29 @@ export async function createUser(name: string, email: string, password: string):
     return null
   } catch (error) {
     console.error("Error creating user:", error)
+    return null
+  }
+}
+
+export async function verifyAuth(request: NextRequest): Promise<User | null> {
+  try {
+    const token =
+      request.headers.get("authorization")?.replace("Bearer ", "") ||
+      request.cookies.get("auth-token")?.value
+
+    if (!token) {
+      return null
+    }
+
+    const decoded = verifyToken(token)
+    if (!decoded) {
+      return null
+    }
+
+    const user = await getUserById(decoded.id)
+    return user
+  } catch (error) {
+    console.error("Error verifying auth:", error)
     return null
   }
 }
